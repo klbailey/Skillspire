@@ -1,1 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src="js2.js"></script> -->
+    <title>JS 9</title>
+</head>
+
+<body>
+    <script>
+        // Create a function that accepts an array and replaces all negative values
+        //  in the array with the word "Negative". Example [-1,2,-3,4,-5] returns 
+        // ["Negative",2,"Negative",4,"Negative"]
+        function replaceNegative(array) {
+            for (var i = 0; i < array.length; i++) {
+                // if with 'Negative'
+                if (array[i] < 0) {
+                    array[i] = 'Negative';
+                }
+            }
+            return array;
+        }
+        // Enter array and call function and enter numbers to array
+
+        console.log(replaceNegative([-1, 2, -3, 4, -5]));
+
+        // Create a function that accepts a string and returns that string 
+        // but reversed. Example: Given "string"  return "gnirts"
+        function reverseString(str) {
+            // split turns into array of chars, reverse reverses, join makes new string reversed
+            const strRev = str.split('').reverse().join('');
+            return strRev;
+        }
+        console.log(reverseString('string'));
+    </script>
+</body>
+
+</html>
