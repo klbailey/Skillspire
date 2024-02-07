@@ -11,10 +11,23 @@
 <body>
   <script>
     // Create a button that changes the color of a division when clicked.
-    // Create container div 
-    var container = document.createElement("div");
-    const btn = document.getElementById('btn');
+    // Create button
+    const newButton = document.createElement('button');
+    // Button text
+    newButton.textContent = 'Change Color';
+    // Add to HTML body
+    document.body.appendChild(newButton);
 
+
+    // Create container div with text & add to HTML body
+    var container = document.createElement("div");
+    container.innerHTML = "<h1>Change Me</h1>";
+    document.body.appendChild(container);
+
+    // Add event listener to change color of division
+    newButton.addEventListener('click', function onClick(event) {
+      document.body.style.color = 'teal';
+    });
   </script>
 </body>
 
