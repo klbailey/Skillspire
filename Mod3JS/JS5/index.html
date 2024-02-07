@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src="js2.js"></script> -->
+    <title>JS 5</title>
+</head>
+
+<body>
+    <h1 style="color: teal;">Form</h1><br>
+
+    <script>
+        // Create form
+        var form = document.createElement('form');
+
+        // Create label/input and append to a div for separate lines for each pair
+        function createLabelAndInput(labelText, inputType, inputName, inputPlaceholder) {
+            // Create div
+            var container = document.createElement('div');
+            // Create label
+            var label = document.createElement('label');
+            label.textContent = labelText;
+            // Create input
+            var input = document.createElement('input');
+            input.type = inputType;
+            input.name = inputName;
+            input.placeholder = inputPlaceholder;
+            // Append label and input to div
+            container.appendChild(label);
+            container.appendChild(input);
+            // Append the div to the form
+            form.appendChild(container);
+        }
+
+        //  Create pairs of label/input for the fields
+        createLabelAndInput('First Name   ', 'text', 'firstName', 'First Name');
+        createLabelAndInput('Last Name   ', 'text', 'lastName', 'Last Name');
+        createLabelAndInput('Email   ', 'email', 'userEmail', 'Email');
+        createLabelAndInput('Age   ', 'text', 'age', 'Age');
+
+        // Create submit button
+        var buttonSubmit = document.createElement('input');
+        buttonSubmit.type = 'submit';
+        buttonSubmit.value = 'Submit';
+
+        // Add event listener for submission
+        form.addEventListener('submit', function (event) {
+            // Prevent default form submission
+            event.preventDefault();
+
+            // Get entered values / [] is attribute selector
+            var firstNameValue = form.querySelector('[name="firstName"]').value;
+            var lastNameValue = form.querySelector('[name="lastName"]').value;
+            var emailValue = form.querySelector('[name="userEmail"]').value;
+            var ageValue = form.querySelector('[name="age"]').value;
+
+            // Display entered values
+            console.log('Name: ' + firstNameValue + ' ' + lastNameValue);
+            console.log('Email: ' + emailValue);
+            console.log('Age: ' + ageValue);
+
+        })
+
+        // Add to form
+        form.appendChild(buttonSubmit);
+
+        // Append to DOM
+        document.body.appendChild(form);
+
+
+    </script>
+</body>

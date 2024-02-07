@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <script src="js2.js"></script> -->
+  <title>JS 7</title>
+  <style>
+    /* resize image */
+    img {
+      width: 350px;
+      height: 250px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <script>
+    // Array to store image links
+    var imageLinks = [
+      "./img/bulldog.jpg",
+      "./img/engbulldog.jpg",
+      "./img/frbulldog.jpg"
+    ];
+
+    // Create container div -->
+    var container = document.createElement("div");
+    // Set ID for container -->
+    container.id = "imageContainer";
+    // Append container to body -->
+    document.body.appendChild(container);
+    // Iterate array by creating image element, set source attribute to link, append to container -->
+    for (var link of imageLinks) {
+      var imgElement = document.createElement("img");
+      imgElement.src = link;
+      container.appendChild(imgElement);
+    }
+
+  </script>
+</body>
+
+</html>

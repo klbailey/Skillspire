@@ -1,0 +1,105 @@
+body {
+    height: 100%;
+    margin: 0 auto;
+    overflow-y: hidden;
+}
+
+#container {
+    height: 100%;
+}
+
+/* NAVIGATION HEADER */
+#navBar {
+    background-color: #3b5998;
+    display: grid;
+    /* 15 columns 1 fraction each*/
+    grid-template-columns: repeat(15, 1fr);
+    /* 3 rows */
+    grid-template-rows: 28.3px 28.3px 28.3px;
+    grid-template-areas: 
+    ". . . . logo . . . emailLabel passwordLabel . ."
+    ". . . . logo . . . email password loginBtn ."
+    ". . . . logo . . . keep forgot . .";
+}
+
+#logo {
+    grid-area: logo;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 45px;
+    color: white;
+    margin-bottom: 13px;
+    align-self: center;
+}
+
+#emailLabel {
+    grid-area: emailLabel;
+    font-size: 12px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#email {
+    grid-area: email;
+    height: 20px;
+    width: 150px;
+    border: 1px solid black;
+    align-self: end;
+    margin-right: 15px;
+    background-color: lightgoldenrodyellow;
+}
+
+#passwordLabel {
+    grid-area: passwordLabel;
+    font-size: 12px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#password {
+    grid-area: password;
+    height: 20px;
+    width: 150px;
+    border: 1px solid black;
+    align-self: end;
+    margin-right: 15px;
+    background-color: lightgoldenrodyellow;
+}
+
+#keep {
+    grid-area: keep;
+    text-decoration: none;
+    color: #9cb4d8;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    align-self: center;
+}
+
+#keepLabel {
+    grid-area: keepLabel;
+    font-size: 12px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#forgot {
+    grid-area: forgot;
+    text-decoration: none;
+    color: #9cb4d8;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    align-self: center;
+}
+
+#loginBtn {
+    grid-area: loginBtn;
+    height: 22px;
+    width: 50px;
+    background-color: #4267b2;
+    color: white;
+    border-style: none;
+    border: 1px solid #29487d;
+    font-weight: bold;
+    padding: 0;
+    align-self: end;
+    font-size: 12px;
+}

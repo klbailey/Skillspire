@@ -1,0 +1,17 @@
+#blueParent {
+    width: 350px;
+    height: 350px;
+    margin: 35%;
+    background-color: blue;
+    /* sets desired behavior when content does not fit in parent element box or overflows */
+    overflow: hidden; 
+}
+
+#redChild {
+    position: relative;
+    width: 25%;
+    height: 25%;
+    margin: auto;
+    margin-top: 37%;
+    background-color: red;
+}

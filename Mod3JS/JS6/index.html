@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src="js2.js"></script> -->
+    <title>JS 6</title>
+    <style>
+        /* resize image */
+        #imageDiv img {
+            width: 300px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Create image div -->
+    <div id="imageDiv"></div>
+
+    <script>
+        function makeImage() {
+            for (i = 1; i <= 3; i++) {
+                var createImage = document.createElement("IMG");
+                createImage.src = "bulldog.jpg";
+                document.getElementById("imageDiv").appendChild(createImage);
+            }
+        }
+        makeImage();
+    </script>
+</body>

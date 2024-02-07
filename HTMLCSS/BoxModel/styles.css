@@ -1,0 +1,47 @@
+body {
+    background-color: blue;
+}
+
+#header, #sideNav, #main, #footer {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 900px;    
+    border-radius: 25px;
+}
+
+#header {
+    background-color: red;
+    height: 45px;
+    margin: auto;
+}
+
+.container {
+    display: flex;
+}
+
+#sideNav {
+    background-color: rgb(77, 185, 195);
+    height: 250px;
+    width: 20%;
+    margin: 0 auto;
+    margin-left: 0px;
+    margin-top: 25px;
+    padding: 5px;
+}
+
+#main {
+    background-color: black;
+    color: white;
+    height: 500px;
+    width: 925px;
+    margin-top: 25px;
+    margin-right: 0px;
+    margin-left: 1px;
+    padding: 5px;
+}
+
+#footer {
+    background: grey;
+    height: 45px;
+    margin-top: 25px;
+}

@@ -1,0 +1,35 @@
+.boxOne, .boxTwo, .boxThree {
+    height: 50px;
+    width: 100%;
+    margin: auto;
+    border: solid black 2px;
+}
+
+#blueChild {
+    position: relative;
+    width: 2%;
+    height: 60%;
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: blue;
+}
+
+#redChild {
+    width: 2%;
+    height: 60%;
+    margin-left: 0px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: red;
+}
+
+#greenChild {
+    width: 2%;
+    height: 60%;
+    margin-left: 95%;
+    margin-right: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: green;
+}
