@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>JQuery 1</title>
+</head>
+
+<body>
+    <!-- TOGGLE -->
+    <div id="toggle">This is a toggle div</div>
+    <button id="btnToggle">Toggle between hide() and show()</button><br><br><br>
+    <!-- HIDE -->
+    <div id="hide">This is a hide div</div>
+    <button class="btn1">Hide</button></div>
+    <button class="btn2">Show</button><br><br><br>
+    <!-- CHANGE BACKGROUND COLOR -->
+    <div id="backgroundColor">This is a change background color div</div>
+    <button id="btnColor">Click</button>
+    <span id="span">Change Background Color</span><br><br><br>
+    <!-- ChANGE TEXT COLOR -->
+    <div id="textColor">Change text color div</div>
+    <button id="btnTextColor">Click me</button>
+    <p>This is text to change</p><br><br><br>
+    <!-- FADE OUT -->
+    <div id="fadeOut">Fade Out</div>
+    <button id="btnFadeOut">Click</button>
+    <p id="fade">fadeout</p><br><br><br>
+
+    <script>
+        // TOGGLE
+        $(document).ready(function () {
+            $("#btnToggle").click(function () {
+                $("#toggle").toggle();
+            });
+        });
+        // HIDE
+        $(document).ready(function () {
+            $(".btn1").click(function () {
+                $("#hide").hide();
+            });
+            $(".btn2").click(function () {
+                $("#hide").show();
+            });
+        });
+        // BACKGROUND COLOR
+        $(document).ready(function () {
+            $("#btnColor").click(function () {
+                $("#span").css("background-color", "teal");
+            });
+        });
+        // TEXT COLOR
+        $(document).ready(function () {
+            $("#btnTextColor").click(function () {
+                $("p").css("color", "purple");
+            });
+        });
+        // FADE OUT
+        $(document).ready(function () {
+            $("#btnFadeOut").click(function () {
+                $("#fade").fadeOut();
+            });
+        });
+    </script>
+</body>
+
+</html>

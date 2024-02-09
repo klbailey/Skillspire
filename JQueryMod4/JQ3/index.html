@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <title>JQuery 3 API/Ajax</title>
+</head>
+
+<body>
+
+  <button id="weatherButton">Click - Seattle Weather</button>
+  <div id="weatherInfo"></div>
+
+  <script>
+    // https://api.openweathermap.org/data/2.5/weather?q=Seattle&appid=70f89b6fd02f7c0f4384c8597dd2da60
+
+    $(document).ready(function () {
+      $("#weatherButton").click(function () {
+        var apiKey = "70f89b6fd02f7c0f4384c8597dd2da60";
+        var apiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=Seattle&appid=' + apiKey;
+
+        $.get(apiUrl, function (result) {
+          // Convert Kelvin to Fahrenheit as result.main.temp is in Kelvin
+          // °F = (K − 273.15) × 9/5 + 32; toFixed(2) two numbers after decimal point 
+          var temperatureFahrenheit = (result.main.temp - 273.15) * 9 / 5 + 32;
+
+          var weatherInfo = "<p>City: " + result.name + "</p>" +
+            "<p>Temperature: " + temperatureFahrenheit.toFixed(2) + "°F</p>" +
+            "<p>Air Pressure: " + result.main.pressure +
+            "<p>Humidity: " + result.main.humidity + "%</p>";
+          // Update 'weatherInfo' div
+          $("#weatherInfo").html(weatherInfo);
+        });
+      });
+    });
+
+
+  </script>
+</body>
+
+</html>

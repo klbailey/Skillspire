@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <title>JQ 2</title>
+  <style>
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      width: 300px;
+    }
+
+    .box {
+      box-sizing: border-box;
+      width: 100px;
+      border: 1px solid white;
+    }
+
+    .yellow-box {
+      background-color: yellow;
+      height: 100px;
+    }
+
+    .green-box {
+      background-color: green;
+      width: 33.33%;
+      height: 130px;
+    }
+
+    .purple-box {
+      background-color: purple;
+      width: 66.66%;
+      height: 130px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="box yellow-box"></div>
+    <div class="box yellow-box"></div>
+    <div class="box yellow-box"></div>
+    <div class="box green-box"></div>
+    <div class="box purple-box"></div>
+  </div>
+  <script>
+    // YELLOW FADE OUT WHEN CLICKED
+    $(document).ready(function () {
+      $(".box.yellow-box").click(function () {
+        // (this) refers to current context/object
+        $(this).fadeOut();
+      });
+    });
+    //  GREEN FADE-OUT WHEN HOVERED OVER
+    $(document).ready(function () {
+      $(".box.green-box").hover(function () {
+        $(this).fadeOut();
+      });
+    });
+    //  PURPLE SLIDE UP WHEN CLICKED
+    $(document).ready(function () {
+      $(".box.purple-box").click(function () {
+        $(this).slideUp();
+      });
+    });
+
+  </script>
+</body>
+
+</html>

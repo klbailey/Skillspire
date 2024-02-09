@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>JQuery 4 Github API</title>
+</head>
+
+<body>
+    <div id="userInfo">
+    </div>
+    <!-- token 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 Good for 60 days from 2/8/24-->
+    <!-- Use backticks to write strings that include variables/expressions inside the string -->
+    <!-- Backticks define the string and `${}` to insert variables or expressions -->
+    <script>
+        const accessToken = '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';
+        const userName = 'klbailey';
+        console.log(`Username:  ${userName}`);
+        // API endpoint to get user information
+        const apiURL = `https://api.github.com/users/${userName}`;
+        // network request to apiURL / fetch returns promise that resolves to Response object(response to request)
+        fetch(apiURL, {
+            // Pass bearer token authorization/header allows one to perform various actions https://developer.mozilla.org/en-US/docs/Web/API/Headers
+            headers: {
+                Authorization: `Bearer ${accessToken}`
+            }
+        })
+            // After fetch completion, take the response, parse it as JSON and return another promise that
+            // resolves to the parsed JSON data
+            .then(response => response.json())
+            // Continues promise chain; data is the parsed JSON content
+            .then(data => {
+                // console.log('Parsed JSON Data:', data);
+                console.log(`Followers: ${data.followers}`);
+                const publicReposCount = data.public_repos;
+                console.log(`Public Repositories: ${publicReposCount}`);
+            })
+            // If error happens during the fetch (request fails or server error response)
+            .catch(error => console.error('Error', error));
+
+
+    </script>
+</body>
+
+</html>
